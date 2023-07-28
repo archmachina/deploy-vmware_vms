@@ -1,0 +1,12 @@
+---
+
+- hosts: vmware_vms
+  become: false
+  any_errors_fatal: true
+  gather_facts: false
+  tasks:
+    - when: "apply|default(false)"
+      delegate_to: localhost
+      block:
+        - include_role:
+            name: vmware_vms
