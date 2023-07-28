@@ -4,6 +4,7 @@
   become: false
   any_errors_fatal: true
   gather_facts: false
+  serial: "{{ serial | default(omit) }}"
   tasks:
     - when: "apply|default(false)"
       delegate_to: localhost
