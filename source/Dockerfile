@@ -1,4 +1,4 @@
-FROM archmachina/ansible-base:0.1.2
+FROM archmachina/ansible-base:0.1.3
 
 COPY --chown=ansible:ansible ./playbook/ /work
 
