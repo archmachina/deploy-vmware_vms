@@ -11,6 +11,10 @@
       block:
         - include_role:
             name: vmware_vms
+  environment:
+    http_proxy: "{{ http_proxy | default('') }}"
+    https_proxy: "{{ https_proxy | default('') }}"
+    no_proxy: "{{ no_proxy | default('') }}"
 
 - hosts: deploy_vmware_vms
   become: false
@@ -21,3 +25,7 @@
         - apply|default(false)
         - vmware_vm_wait_connection | default(false)
       ansible.builtin.wait_for_connection:
+  environment:
+    http_proxy: "{{ http_proxy | default('') }}"
+    https_proxy: "{{ https_proxy | default('') }}"
+    no_proxy: "{{ no_proxy | default('') }}"
