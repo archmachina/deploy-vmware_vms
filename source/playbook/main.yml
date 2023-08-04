@@ -6,8 +6,7 @@
   gather_facts: false
   serial: "{{ serial | default(omit) }}"
   tasks:
-    - when: "apply|default(false)"
-      delegate_to: localhost
+    - delegate_to: localhost
       block:
         - include_role:
             name: vmware_vms
@@ -22,7 +21,6 @@
   gather_facts: false
   tasks:
     - when:
-        - apply|default(false)
         - vmware_vm_wait_connection | default(false)
       ansible.builtin.wait_for_connection:
   environment:
