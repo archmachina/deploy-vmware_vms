@@ -1,4 +1,4 @@
 requests==2.28.2
 ansible-core==2.15.2
-pyvmomi==8.0.0.1.2
+pyvmomi==8.0.2.0.1
 jmespath==0.10.0
