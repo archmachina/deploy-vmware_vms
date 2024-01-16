@@ -1,4 +1,4 @@
-FROM archmachina/ansible-base:0.1.3
+FROM archmachina/ansible-base:0.2.1
 
 COPY --chown=ansible:ansible "./playbook/requirements.txt" "./playbook/requirements.yml" \
   "./playbook/ansible.cfg"  /work/
